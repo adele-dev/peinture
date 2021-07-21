@@ -32,7 +32,7 @@ const paintings = [
   },
   {
     id: 3,
-    title: "La fleur enchantée",
+    title: "Interspace",
     artist: "Renoir",
     format: "80x80",
     price: 347000,
@@ -41,7 +41,7 @@ const paintings = [
   },
   {
     id: 4,
-    title: "La fleur enchantée",
+    title: "La romantique",
     artist: "Chagall",
     format: "80x80",
     price: 347000,

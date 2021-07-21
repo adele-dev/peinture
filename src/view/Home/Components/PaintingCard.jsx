@@ -13,6 +13,8 @@ import ShareIcon from "@material-ui/icons/Share";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "250px",
+    marginRight: "15px",
+    marginBottom: "15px",
   },
   media: {
     height: 0,
@@ -42,9 +44,6 @@ function PaintingCard({ title, artist, format, price, description, image }) {
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
             <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
           </IconButton>
         </CardActions>
       </Card>
