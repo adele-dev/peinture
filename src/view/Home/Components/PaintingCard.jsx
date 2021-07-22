@@ -27,7 +27,7 @@ function PaintingCard({ id, title, artist, format, price, image }) {
 
   return (
     <>
-      <Link to={`/paintings/${id}`}>
+      <Link style={{ textDecoration: "none" }} to={`/paintings/${id}`}>
         <Card className={classes.root}>
           <CardHeader title={title} subheader={artist} />
           <CardMedia className={classes.media} image={image} title={title} />

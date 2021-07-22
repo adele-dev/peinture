@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   "@global": {
@@ -97,13 +98,30 @@ function AdminPage(props) {
     title: "",
     artist: "",
     format: "",
-    prix: "",
+    price: 0,
     image: "",
     description: "",
   });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handlePrice = (e) => {
+    const value = e.target.value;
+    let price;
+    if (value !== "") {
+      price = parseInt(e.target.value);
+    } else {
+      price = 0;
+    }
+    setForm({ ...form, ...{ price: price } });
+  };
+
+  // Query to post datas into table GAMES - INSERT INTO
+  const submitForm = async (e) => {
+    e.preventDefault();
+    await axios.post("http://localhost:8000/api/paintings", form);
   };
 
   return (
@@ -113,7 +131,7 @@ function AdminPage(props) {
         <button>Retour</button>
       </Link>
       <h2>Ajouter un nouveau tableau</h2>
-      <form>
+      <form onSubmit={submitForm}>
         <fieldset>
           <legend>Insérer tableau</legend>
           <div>
@@ -147,9 +165,9 @@ function AdminPage(props) {
             <label for="">Prix</label>
             <input
               type="text"
-              onChange={handleChange}
+              onChange={handlePrice}
               name="price"
-              value={form.price}
+              value={form.price.toString()}
             />
           </div>
           <div>
@@ -163,13 +181,15 @@ function AdminPage(props) {
           </div>
           <div>
             <label for="">Description</label>
-            <input
-              type="text"
-              onChange={handleChange}
+            <textarea
               name="description"
+              onChange={handleChange}
               value={form.description}
-            />
+              rows="5"
+              cols="33"
+            ></textarea>
           </div>
+          <button type="submit">Valider</button>
         </fieldset>
       </form>
 

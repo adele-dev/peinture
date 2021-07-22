@@ -1,7 +1,7 @@
 import "./App.css";
 import Home from "./view/Home/Home";
 import AdminPage from "./view/Admin/AdminPage";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./view/Login/Login";
 import PaintingDetails from "./view/Home/Components/PaintingDetails";
 

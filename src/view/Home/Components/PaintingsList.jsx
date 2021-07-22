@@ -107,7 +107,7 @@ function PaintingsList(props) {
   }, []);
   return (
     <div>
-      <h3>Tous nos tableaux</h3>
+      <h3>Découvrez nos tableaux</h3>
       <div className={classes.gallery}>
         {paintings.map((painting) => (
           <PaintingCard key={painting.id} {...painting} />
