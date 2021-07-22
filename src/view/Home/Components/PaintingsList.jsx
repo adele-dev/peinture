@@ -91,7 +91,7 @@ function PaintingsList(props) {
   const [painting, setPainting] = useState(paintings);
   return (
     <div>
-      <h3>Liste des tableaux</h3>
+      <h3>Tous nos tableaux</h3>
       <div className={classes.gallery}>
         {paintings.map((painting) => (
           <PaintingCard key={painting.id} {...painting} />
